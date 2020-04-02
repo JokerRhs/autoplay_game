@@ -7,3 +7,11 @@ laji_jiaoben.py
 *.log
 /图库/
 /新建文件夹/
+/orc/
+*.e
+*.fne
+*.fnr
+*.bak
+
+
+

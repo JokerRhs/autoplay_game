@@ -7,7 +7,7 @@ from GameSetting import game_setting as gs
 
 
 dm = DmClass()
-DM = dm.register_Dm()
+DM = dm.register_dm()
 DM.SetPath(os.path.join(os.getcwd(), ''))
 
 
