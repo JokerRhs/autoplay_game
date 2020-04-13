@@ -1,6 +1,4 @@
 import os
-import time
-import webbrowser as web
 
 import psutil
 
@@ -39,6 +37,7 @@ for i in range(len(pid_list)):
     else:
         raise NameError
 
+"""  登录 """
 logout_ret = dm.find_str_fast(970, 317, 1056, 358, "注销", "000000-666666")
 if logout_ret is not None:
     x = int(logout_ret[1])
@@ -79,6 +78,8 @@ else:
     DM.Delays(20000, 25000)
 
 
+
+""" 登录服务器 """
 out_str = dm.find_str_fast(928, 243, 990, 280, "近", "000000-666666")
 if out_str != None:
     two_str = dm.find_str_fast(909, 267, 1004, 302, "双", "b@000000-999999")
@@ -91,6 +92,9 @@ if out_str != None:
     else:
         dm.left_click(970, 287, 0, 0)
         DM.Delays(20000, 25000)
+
+DM.Delays(20000, 25000)
+
 day_pic = DM.FindPic(953, 836, 1005, 894, "背包.bmp", "050505", 0.8, 0)
 print(day_pic)
 if day_pic[0] != -1:
@@ -107,24 +111,24 @@ if day_pic[0] != -1:
             dm.left_click(ji_pin_ret[1]+123, ji_pin_ret[2]-190)
 
         DM.Delay(300)
-        DM.FindColorEx(659, 416, 717, 463, "3C30F3|5A59F4", 0.9, 0)
-        red_color = dm.find_color_ex(659, 416, 717, 463, "3C30F3|5A59F4", 0.9, 0)
+
+        red_color = dm.find_color(659, 416, 717, 463, "A37E7A-5B7662", 0.9, 0)
         if red_color is not None:
             jing_ret = dm.find_str_fast(411, 348, 474, 390, "经", "b@000000-999999")
             if jing_ret is not None:
                 print(jing_ret)
                 dm.left_click(jing_ret[1], jing_ret[2])
                 print("点击离线经验")
-            DM.Delays(1000, 3000)
+            DM.Delay(1000)
 
-        ling_qu_ret = dm.find_color_ex(1297, 564, 1385, 599, "3DCBF7|36A5F5|15396F", 0.9, 0)
+        ling_qu_ret = dm.find_color(1139, 453, 1214, 478, "B49983-4B6470", 0.7, 0)
         if ling_qu_ret is not None:
             print(ling_qu_ret)
-            dm.left_click(ling_qu_ret[1], ling_qu_ret[2])
+            dm.left_click(ling_qu_ret[1], ling_qu_ret[2], 5, 5)
             print("点击领取离线经验")
 
         DM.Delay(1000)
-        true_ret = dm.find_color_ex(919, 607, 1016, 647, "13356F|39B1F3|A4FCFC|9AF0FE", 0.9, 0)
+        true_ret = dm.find_color(919, 607, 1016, 647, "6A3513-000000|AC6B23-0B0704|F0B052-0E2621", 0.9, 0)
         if true_ret is not None:
             print(true_ret)
             dm.left_click(true_ret[1], true_ret[2])

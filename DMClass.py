@@ -35,39 +35,36 @@ class DmClass(object):
         self.DM.RightClick()
 
     def find_str_fast(self, x1, y1, x2, y2, string1, color_format, sim=0.9, num=10):
+        print("开始查找:%s" % string1)
         for i in range(num):
-            print("开始查找:%s" % string1)
             self.DM.Delay(500)
             res = self.DM.FindStrFast(x1, y1, x2, y2, string1, color_format, sim)
             if res[0] != -1:
                 print("找到%s" % string1)
                 return res
-            else:
-                pass
+        print("没有找到:%s" % string1)
         return None
 
     def find_pic(self, x1, y1, x2, y2, pic_name, delta_color="050505", sim=0.9, dir1=0, num=10):
+        print("开始查找:%s" % pic_name)
         for i in range(num):
-            print("开始查找:%s" % pic_name)
             self.DM.Delay(500)
             res = self.DM.FindPic(x1, y1, x2, y2, pic_name, delta_color, sim, dir1)
             if res[0] != -1:
                 print("找到%s" % pic_name)
                 return res
-            else:
-                pass
+        print("没有找到:%s" % pic_name)
         return None
 
-    def find_color_ex(self, x1, y1, x2, y2, color, sim=0.9, dir1=0, num=10):
+    def find_color(self, x1, y1, x2, y2, color, sim=0.9, dir1=0, num=10):
+        print("开始查找:%s" % color)
         for i in range(num):
-            print("开始查找:%s" % color)
             self.DM.Delay(500)
-            res = self.DM.FindPic(x1, y1, x2, y2, color, sim, dir1)
-            if res[0] != -1:
+            res = self.DM.FindColor(x1, y1, x2, y2, color, sim, dir1)
+            if res[0] != 0:
                 print("找到%s" % color)
                 return res
-            else:
-                pass
+        print("没有找到:%s" % color)
         return None
 
 if __name__ == '__main__':
